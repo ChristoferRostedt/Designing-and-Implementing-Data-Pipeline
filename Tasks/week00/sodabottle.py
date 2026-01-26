@@ -14,6 +14,5 @@ class SodaBottle:
     def drink(self) -> None:
         if not self.capOpen:
             print("Can't drink from a closed bottle...")
-
         else:
             print(f"Glunk glunk! mmmm... taste like {self.brand}.")
