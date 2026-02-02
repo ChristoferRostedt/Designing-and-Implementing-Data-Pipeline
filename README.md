@@ -11,5 +11,5 @@ Tasks -> weekxx -> project -> main.py, library.py
 | Week | Tasks | Status |
 | --- | --- | --- |
 | 00 | [Counter](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Counter) | Done |
-| 00 | [Temperature converter](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Temperature%20converter) | In progress |
+| 00 | [Temperature converter](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Temperature%20converter) | Done |
 | 00 | [Coin acceptor](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Coin%20acceptor) | In progress |
