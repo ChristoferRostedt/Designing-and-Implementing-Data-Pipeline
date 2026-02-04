@@ -10,10 +10,13 @@ class CoinAcceptor:
         self.__value = 0.0
 
     def insertCoin(self) -> None:
+        self.__amount += 1
         return None
     
     def getAmount(self) -> int:
-        return
+        return self.__amount
     
     def returnCoins(self) -> int:
-        return
+        val = self.__amount
+        self.__amount = 0
+        return val

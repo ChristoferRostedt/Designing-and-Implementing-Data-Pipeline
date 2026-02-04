@@ -5,11 +5,11 @@ This is where the assignments for Designing and Implementing Data Pipeline are d
 
 ### Stucture of the repository
 Examples -> weekxx -> example/cheatsheet.py\
-Tasks -> weekxx -> project -> main.py, library.py
+Tasks -> weekxx -> Project -> main.py, library.py
 
 ### Tasks status
 | Week | Tasks | Status |
 | --- | --- | --- |
 | 00 | [Counter](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Counter) | Done |
 | 00 | [Temperature converter](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Temperature%20converter) | Done |
-| 00 | [Coin acceptor](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Coin%20acceptor) | In progress |
+| 00 | [Coin acceptor](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Coin%20acceptor) | Done |
