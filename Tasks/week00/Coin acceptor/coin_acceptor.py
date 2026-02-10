@@ -21,5 +21,5 @@ class CoinAcceptor:
         self.__amount = 0
         return val
     
-    def returncli(self) -> None:
-        return
+    # def returncli(self) -> None:
+    #     return
