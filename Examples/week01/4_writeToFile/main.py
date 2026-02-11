@@ -27,3 +27,9 @@ for item in items:
     row = item.serialize()
     print(row)
 print("#### rows ####")
+
+rows: list[str] = []
+for item in items:
+    row = item.serialize()
+    rows.append(row)
+inventory_file.write(rows)

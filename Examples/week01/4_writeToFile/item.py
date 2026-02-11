@@ -16,7 +16,7 @@ class Item:
             columns[0], #name
             float(columns[1]), #value
             columns[2],
-            float(columns[3]), #weight
+            float(columns[2]), #weight
         )
         return item
     
