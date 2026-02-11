@@ -6,13 +6,16 @@ inventory_file = FileHandler(filename) # Create an object
 rows = inventory_file.read() #Use read method for the previously created object
 items: list[Item] = []
 print("#### inventory ####")
+
 for i in range(len(rows)):
     _item = Item.deserialize(rows[i])
     print(f"{i + 1}. ", end='')
     _item.display_price()
     items.append(_item)
+    
 # allow user to set new item value...
 print ("\n Update the item values: ")
+
 for item in items: 
     new_value = input (f"New value for {item.name} (current{item.value}): ")
     if new_value.strip != "":
