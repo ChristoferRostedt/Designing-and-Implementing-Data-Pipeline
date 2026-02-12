@@ -1,3 +1,8 @@
+########################################################
+# main.py
+# Developer: Christofer Rostedt
+# Date:
+########################################################
 from counter import Counter
 
 def displayOptions() -> None:

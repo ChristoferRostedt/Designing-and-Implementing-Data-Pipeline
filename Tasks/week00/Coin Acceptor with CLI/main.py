@@ -1,5 +1,9 @@
+########################################################
+# main.py
+# Developer: Christofer Rostedt
+# Date:
+########################################################
 from coin_acceptor_cli import CoinAcceptor
-
 
 def main() -> None:
     print("Program starting.")

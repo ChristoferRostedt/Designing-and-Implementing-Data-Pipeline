@@ -1,3 +1,8 @@
+########################################################
+# main.py
+# Developer: Christofer Rostedt
+# Date:
+########################################################
 from temperature_converter import TemperatureConverter
 
 def displayOptions() -> None:

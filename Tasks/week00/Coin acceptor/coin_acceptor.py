@@ -1,3 +1,8 @@
+########################################################
+# coin_acceptor.py
+# Developer: Christofer Rostedt
+# Date:
+########################################################
 class CoinAcceptor:
     __amount: int
     __value: float

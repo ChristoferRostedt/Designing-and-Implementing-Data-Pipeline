@@ -1,3 +1,8 @@
+########################################################
+# main.py
+# Developer: Christofer Rostedt
+# Date:
+########################################################
 from coin_acceptor import CoinAcceptor
 
 def displayOptions() -> None:

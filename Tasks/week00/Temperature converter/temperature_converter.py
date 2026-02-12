@@ -1,3 +1,8 @@
+########################################################
+# temperature_converter.py
+# Developer: Christofer Rostedt
+# Date:
+########################################################
 class TemperatureConverter:
     __temperature: float
 

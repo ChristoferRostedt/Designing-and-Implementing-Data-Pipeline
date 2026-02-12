@@ -1,3 +1,8 @@
+########################################################
+# counter.py
+# Developer: Christofer Rostedt
+# Date:
+########################################################
 class Counter:
     counter: int
 
