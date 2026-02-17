@@ -4,8 +4,19 @@
 This is where the assignments for Designing and Implementing Data Pipeline are done as part of my Industrial Information Technology course.
 
 ### Stucture of the repository
-Examples -> weekxx -> example/cheatsheet.py\
-Tasks -> weekxx -> Project -> main.py, library.py
+<!-- Examples -> weekxx -> example/cheatsheet.py\
+Tasks -> weekxx -> Project -> main.py, library.py -->
+```
+├─ Examples
+│  └─ weekXX
+│     └─ exampleX
+│        └─ files.py
+└─ Tasks
+   └─ weekXX
+      └─ taskX
+         ├─ main.py
+         └─ lib.py
+```
 
 ### Tasks status
 | Week | Tasks | Status |
