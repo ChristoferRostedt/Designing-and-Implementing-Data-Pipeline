@@ -1,79 +1,144 @@
 import sqlite3
 conn = sqlite3.connect("school copy.db")
-cursor = conn.cursor()
+c = conn.cursor()
 
-def showMenu() -> None:
-    print("1 - Register")
-    print("2 - Login")
-    print("0 - Exit")
+c.execute("PRAGMA foreign_keys = ON")
 
-def get_student_credits(student_id)
+# --- Create table ---
 
 def create_table():
-    query = "DROP TABLE IF EXISTS login"
-    cursor.execute(query)
-    conn.commit()
-    
-    query = "CREATE TABLE login(Username VARCHAR UNIQUE, Password VARCHAR)"
-    cursor.execute(query)
+       # Login table (authentication)
+    c.execute("""
+        CREATE TABLE IF NOT EXISTS login(
+            Username TEXT PRIMARY KEY COLLATE BINARY,
+            Passwords TEXT
+        )
+    """)
+
+    # Student table (structure)
+    c.execute("""
+        CREATE TABLE IF NOT EXISTS Student(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            birthday DATA,
+            major TEXT,
+            name REFERENCES login(Username)
+        )
+    """)
+
     conn.commit()
 
-def enter(username, password):
-    query = "INSERT INTO login (Username, Password) VALUES (?, ?)"
-    cursor.execute(query, (username, password))
-    conn.commit()
+# --- Register (adds authorized users) ---
+def register():
+    username = input("Enter username (must match student name exactly): ")
+    password = input("Enter password: ")
 
-def check(username, password):
-    query = 'SELECT * FROM login WHERE Username = ? AND Password = ?'
-    cursor.execute(query, (username, password))
-    result = cursor.fetchone()
-    conn.commit()
-    print('[DEBUG][check] result:', result)
-    return result
+    # Check if student exists
+    c.execute(
+        "SELECT id FROM Student WHERE name=? COLLATE BINARY",
+        (username,)
+    )
+    student = c.fetchone()
 
-def loginlol():
+    if not student:
+        print("No matching student found. Cannot register.\n")
+        return
 
+    try:
+        c.execute(
+            "INSERT INTO login (Username, Passwords) VALUES (?, ?)",
+            (username, password)
+        )
+        conn.commit()
+        print("Registered successfully.\n")
+
+    except sqlite3.IntegrityError:
+        print("User already exists.\n")
+
+
+# --- Login (ONLY if user exists exactly) ---
+def login():
     username = input("Username: ")
     password = input("Password: ")
-    if check(username, password):
-        print("Username correct!")
-        print("Password correct!")
-        print("Logging in...")
-    else:
-        print("Something wrong")
 
-# --- main ---
-def main() -> None:
+    c.execute("""
+        SELECT login.Username
+        FROM login
+        JOIN Student ON login.Username = Student.name
+        WHERE login.Username=? COLLATE BINARY
+        AND login.Passwords=?
+    """, (username, password))
+
+    result = c.fetchone()
+
+    if result:
+        print(" Access granted! :) \n")
+    else:
+        print(" Access denied. :( \n")
+
+def view_credits():
+    username = input("Enter your username to see how many credits your aah has: ")
+
+    # Get student id
+    c.execute(
+        "SELECT id FROM Student WHERE name=? COLLATE BINARY",
+        (username,)
+    )
+    student = c.fetchone()
+
+    if not student:
+        print("No such student.\n")
+        return
+
+    student_id = student[0]
+
+    # Fetch credits
+    c.execute("""
+        SELECT Course.name, Credits.grade, Credits.credits
+        FROM Credits
+        JOIN Course ON Credits.id_course = Course.id
+        WHERE Credits.id_student=?
+    """, (student_id,))
+
+    results = c.fetchall()
+
+    if results:
+        print("\nYour Credits:")
+        for row in results:
+            print(f"Course: {row[0]}, Grade: {row[1]}, Credits: {row[2]}")
+        print()
+    else:
+        print("No credits found.\n")
+
+# --- Menu ---
+def main():
     print("Program starting.")
     while True:
-        showMenu()
-        choice = input("Insert option: ")
-        try:
-            choice = int(choice)
-        except ValueError:
-            print("Value must be an integer.")
-
-        if(choice == 1):
-            create_table()
-            Username = input("Create username: ")
-            Password = input("Create password: ")
-            enter(Username, Password)
-            #check(Username, Password)
-            print()
-
-        elif(choice == 2):
-            loginlol()
-            cursor.close()
-            conn.close()
-            print()
-
-        elif(choice == 0):
-            print("Exiting...\n")
+        print("====================================")
+        print("Welcome to the Login System")
+        print("====================================")
+        print("1 - Register")
+        print("2 - Login")
+        print("3 - Access Credits")
+        print("0 - Exit")
+        choice = input("Enter choice: ")
+        if choice == "1":
+            register()
+        elif choice == "2":
+            login()
+        elif choice == "3":
+            view_credits()
+        elif choice == "0":
+            print("Exiting program.")
             break
         else:
-            print("Unknown option. Try again!\n")
+            print("Invalid option.\n")
     
     print("Program ending.")
 
+
 if __name__ == "__main__":
+    create_table()
     main()
+
+    conn.close()
