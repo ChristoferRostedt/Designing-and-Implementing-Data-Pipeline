@@ -32,7 +32,7 @@ def check(username, password):
     print('[DEBUG][check] result:', result)
     return result
 
-def loginlol():
+def login():
 
     username = input("Username: ")
     password = input("Password: ")
@@ -59,11 +59,11 @@ def main() -> None:
             Username = input("Create username: ")
             Password = input("Create password: ")
             enter(Username, Password)
-            #check(Username, Password)
+            check(Username, Password)
             print()
 
         elif(choice == 2):
-            loginlol()
+            login()
             cursor.close()
             conn.close()
             print()
