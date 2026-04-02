@@ -11,14 +11,18 @@ def showMenu() -> None:
 
 def main() -> None:
     print("Program starting")
-    devices = fh.FileHandler()
+    # devices = fh.FileHandler()
+    tempDevices = ''
+    filename = "devices.csv"
     while True:
         showMenu()
         choice = input("Your choice: ")
         
         if(choice == 1):
-            
+            tempDevices += input("Insert the device you wish to add: ") + ', '
+
         elif(choice == 2):
+            print("")
 
         elif(choice == 3):
 
