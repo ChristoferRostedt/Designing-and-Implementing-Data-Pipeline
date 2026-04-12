@@ -27,4 +27,12 @@ Tasks -> weekxx -> Project -> main.py, library.py -->
 | 00 | [Coin acceptor cli](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Coin%20acceptor) | Done |
 | 00 | [Personal task](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Personal%20task) | In progress |
 
+### Temp
+TODO:
+- school login system
+- task list
+- NumPy task
+- Tkinter
+- week 0 tasks
+
 ### [Class notes](/classNotes.md)
