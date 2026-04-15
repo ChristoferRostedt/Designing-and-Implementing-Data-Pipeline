@@ -36,3 +36,8 @@ TODO:
 - week 0 tasks
 
 ### [Class notes](/classNotes.md)
+
+# Exams includes
+- OOP
+- DataBase
+- User interface
