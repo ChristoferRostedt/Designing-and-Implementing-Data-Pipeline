@@ -3,7 +3,7 @@
 Tasks and learning repository for LAB UAS from 1st acedemic year of 2nd semester.
 
 ## Stucture of the repository
-<!-- Examples -> weekxx -> example/cheatsheet.py\
+<!-- Examples -> weekxx -> example/cheatsheet.py/
 Tasks -> weekxx -> Project -> main.py, library.py -->
 ```
 ├─ Examples
@@ -26,8 +26,8 @@ Tasks -> weekxx -> Project -> main.py, library.py -->
 | 00 | [Coin acceptor cli](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Coin%20acceptor) | Done |
 | 00 | [Personal task](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Personal%20task) | In progress |
 | DB | [School login system](DB) | In progress |
-| 04 | [Rocket](Tasks\week04\Rocket.py) | In progress |
-| 04 | [Rotate The Square](Tasks\week04\rotateTheSquare.py) | In progress |
+| 04 | [Rocket](Tasks/week04/Rocket.py) | In progress |
+| 04 | [Rotate The Square](Tasks/week04/rotateTheSquare.py) | In progress |
 | 04 | [Cube Rotator]() | In progress |
 | Tkinter | [ToDoList]() | In progress |
 
