@@ -1,5 +1,12 @@
 # Class Notes
 
+## Temp TODO:
+- school login system
+- task list
+- NumPy task
+- Tkinter
+- week 0 tasks
+
 # Introduction
 - 2:15
 Small projects on 2nd semester
