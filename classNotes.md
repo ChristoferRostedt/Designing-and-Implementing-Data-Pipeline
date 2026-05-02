@@ -151,3 +151,15 @@ Family (common attribute)
 - Both "Car" and "Motorcycle" have similarities
 - Still, they have their differences
 - There are cases where **reusing** existing classes will be handy...
+
+# Python decorator
+dataclass bacically does __init__ method
+So instead of needing to write 
+class y:
+def __init__(self, x:int)
+    self.x = x
+
+you can just write
+@dataclass
+class y:
+    x: int

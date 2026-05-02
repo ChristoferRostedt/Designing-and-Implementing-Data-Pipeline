@@ -41,6 +41,7 @@ class Main:
         filename = "inventory.csv"
         inventory_file = FileHandler(filename)
         rows = inventory_file.read()
+
         print('### inventory ###')
         inventory: list[Item] = []
         for row in rows:
@@ -48,13 +49,16 @@ class Main:
             _item.display_price()
             inventory.append(_item)
         print('#### inventory ####')
+
         feed = input(f"Change item value (enter 1 - {len(inventory)}): ")
         try:
             index = int(feed) - 1
             feed = input(f"Set new value for {inventory[index].name}: ")
             inventory[index].set_value(float(feed))
+
         except Exception:
             print("error")
+            
         print("Serializing item into rows")
         print("## Rows ##")
         for _item in inventory:
