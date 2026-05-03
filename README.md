@@ -22,11 +22,11 @@ Tasks -> weekxx -> Project -> main.py, library.py -->
 ## Tasks status
 | Week | Tasks | Status |
 | --- | --- | --- |
-| 00 | [Counter](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Counter) | Done |
-| 00 | [Temperature converter](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Temperature%20converter) | Done |
-| 00 | [Coin acceptor](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Coin%20acceptor) | Done |
-| 00 | [Coin acceptor cli](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Coin%20acceptor) | Done |
-| 00 | [Personal task](https://github.com/ChristoferRostedt/Designing-and-Implementing-Data-Pipeline/tree/main/Tasks/week00/Personal%20task) | empty |
+| 00 | [Counter](/Tasks/week00/Counter/) | Done |
+| 00 | [Temperature converter](/Tasks/week00/Temperature%20converter/) | Done |
+| 00 | [Coin acceptor](/Tasks/week00/Coin%20acceptor/) | Done |
+| 00 | [Coin acceptor cli](/Tasks/week00/Coin%20Acceptor%20with%20CLI/) | Done |
+| 00 | [Personal task](/Tasks/week00/Personal%20Task/) | Empty |
 | 01 | [Custom Data Pipeline for IoT Devices](/Tasks/week01/1%20Custom%20Data%20Pipeline%20for%20IoT%20Devices/) | Done |
 | 01 | [Abstract Base Class for Game Characters](/Tasks/week01/2%20Abstract%20Base%20Class%20for%20Game%20Characters/) | Done |
 | 01 | [Polymorphic Behavior in a Smart Home System](/Tasks/week01/3%20Polymorphic%20Behavior%20in%20a%20Smart%20Home%20System/) | Done |
