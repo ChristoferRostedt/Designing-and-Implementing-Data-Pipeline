@@ -37,7 +37,7 @@ Tasks -> weekxx -> Project -> main.py, library.py -->
 | 04 | [Rocket](Tasks/week04/Rocket.py) | In progress |
 | 04 | [Rotate The Square](Tasks/week04/rotateTheSquare.py) | In progress |
 | 04 | [Cube Rotator]() | In progress |
-| Tkinter | [ToDoList]() | In progress |
+| Tkinter | [Tasklist]() | In progress |
 
 ## [Class notes](/classNotes.md) is avaliable via this this link
 
