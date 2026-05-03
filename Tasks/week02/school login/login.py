@@ -119,15 +119,19 @@ def main():
         print("====================================")
         print("1 - Register")
         print("2 - Login")
-        print("3 - Access Credits")
         print("0 - Exit")
         choice = input("Enter choice: ")
         if choice == "1":
             register()
         elif choice == "2":
             login()
-        elif choice == "3":
-            view_credits()
+            Feed = input("View credits? (Yes/No): ").lower()
+            if Feed == "yes":
+                view_credits()
+            elif Feed == "no":
+                exit()
+                break 
+
         elif choice == "0":
             print("Exiting program.")
             break
