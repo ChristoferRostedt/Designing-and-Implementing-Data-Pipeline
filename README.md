@@ -6,7 +6,8 @@ Tasks and learning repository for LAB UAS from 1st acedemic year of 2nd semester
 <!-- Examples -> weekxx -> example/cheatsheet.py/
 Tasks -> weekxx -> Project -> main.py, library.py -->
 ```
-
+├─ DB
+│  └─ database.db
 ├─ Examples
 │  └─ weekXX
 │     └─ exampleX
