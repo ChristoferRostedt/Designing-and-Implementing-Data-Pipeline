@@ -1,37 +1,39 @@
 from dataclasses import dataclass
 
 @dataclass
-class Device: 
+class IoTDevice:
     SEPARATOR = ","
     deviceId: int
     location: str
     data: float
-    
-    # 2 separate decorators, you don't have to use staticmethod AND dataclass; it's either-or
-    @staticmethod
-    def deserialize(row: str) -> 'Device':
-        columns = row.split(Device.SEPARATOR) #Comma seperated values 
-        device = Device(
-            int(columns[0]), #deviceId
-            str(columns[1]), #location
-            float(columns[2]), # 
-        )
-        return device
-    
-    def serialize(self) -> str:
-        columns: list[str] = [] # Constructing row from columns
-        # columns => [ "deviceId", value, "category", weight ]
-        columns.append(str(self.deviceId)) # textfile accepts only characters
-        columns.append(self.location) 
-        columns.append(str(self.data))
-        row = self.SEPARATOR.join(columns) # "deviceId,value,category,weight"
-        return row
-    
-    def set_value(self, new_value: float) -> None:
-        if new_value < 0:
-            print("Value can't be negative.")
-        else:
-            self.value = new_value
-        return None
+    deviceType: str = "Generic"
 
-    
+    def serialize(self) -> str:
+        """Converts object attributes to a CSV string[cite: 2]."""
+        return f"{self.deviceId}{self.SEPARATOR}{self.location}{self.SEPARATOR}{self.data}{self.SEPARATOR}{self.deviceType}"
+
+    @staticmethod
+    def deserialize(row: str) -> 'IoTDevice':
+        """Converts a CSV string back into a specific IoT device object[cite: 2]."""
+        cols = row.split(IoTDevice.SEPARATOR)
+        d_id, loc, val, d_type = int(cols[0]), cols[1], float(cols[2]), cols[3]
+        
+        if d_type == "Temperature":
+            return TemperatureSensor(d_id, loc, val)
+        elif d_type == "Humidity":
+            return HumiditySensor(d_id, loc, val)
+        elif d_type == "Motion":
+            return MotionSensor(d_id, loc, val)
+        return IoTDevice(d_id, loc, val)
+
+class TemperatureSensor(IoTDevice):
+    def __init__(self, deviceId, location, data):
+        super().__init__(deviceId, location, data, "Temperature")
+
+class HumiditySensor(IoTDevice):
+    def __init__(self, deviceId, location, data):
+        super().__init__(deviceId, location, data, "Humidity")
+
+class MotionSensor(IoTDevice):
+    def __init__(self, deviceId, location, data):
+        super().__init__(deviceId, location, data, "Motion")
